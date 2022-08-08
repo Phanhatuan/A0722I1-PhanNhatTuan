@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .white-text{
+        color: #fff;
+    }
+    .blue-text {
+        color: blue;
+    }
+    .orange-text {
+        color: #ff3c17;
+    }
+    .orange-br{
+        background: #ff3c17;
+    }
+    .upperText {
+        text-transform: uppercase;
+    }
+    .m0{
+        margin: 0 auto;
+    }
+    .text-center {
+        text-align: center;
+    }
+
+</style>
+<body>
+<form  action="#" method="get">
+    <table class="m0" cellspacing="15">
+        <tr>
+            <td class ="orange-br upperText text-center white-text"colspan="2">Sở thích của bạn</td>
+        </tr>
+        <tr>
+            <td class="blue-text">Họ và tên:</td>
+            <td>
+                <label for="name"></label>
+                <input type="text" id="name" name="yourname" value="Name" size="25">
+            </td>
+        </tr>
+        <tr>
+            <td class="blue-text">Email:</td>
+            <td>
+                <label for="email"></label>
+                <input type="text" id="email" name="email" value="Email" size="15">
+            </td>
+        </tr>
+        <tr>
+            <td class="blue-text">Sở thích: </td>
+            <td>
+                <table class ="orange-text">
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="hr" value="play">Thể thao
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hr" value="play">Âm nhạc
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hr" value="play">Chơi game
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="hr" value="play">Đọc sách
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hr" value="play">Du lịch
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hr" value="play">Điện ảnh
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="hr" value="play">Lướt web
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        <tr>
+            <td></td>
+            <td><input type="submit" name="q" value="Gửi thông tin">
+                <input type="reset" name="q" value="Nhập lại"></td>
+        </tr>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
