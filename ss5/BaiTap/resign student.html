@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Ký</title>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        .blue-text{
+            color:#1e11ff;
+        }
+        .darkBlueText{
+            color: darkblue;
+        }
+        .blueBr{
+            background: #7bffd6;
+        }
+
+    </style>
+</head>
+<body>
+<form>
+    <table  cellspacing="10"  bgcolor="#ffeb55" style="text-align: left;padding-right: 100px; margin: 0 auto;">
+        <tr class="blue-text blueBr">
+            <th colspan="2">
+                <h2>  ĐĂNG KÝ HỌC VIÊN </h2>
+            </th>
+        </tr>
+        <tr class="darkBlueText">
+            <td>Họ và tên</td>
+            <td>
+                <input type="text" name="yourName" size="30" >
+            </td>
+        </tr>
+        <tr class="darkBlueText">
+            <td>Ngày sinh</td>
+            <td>
+                <input type="text" name="dob" size="20">
+            </td>
+        </tr>
+        <tr>
+            <td class="darkBlueText">Giới tính</td>
+            <td>
+                <input type="radio" name="gender" value="Nam">Nam
+                <input type="radio" name="gender" value="Nữ">Nữ
+            </td>
+        </tr>
+        <tr class="darkBlueText">
+            <td>Địa chỉ</td>
+            <td>
+                <textarea></textarea>
+            </td>
+        </tr>
+        <tr class="darkBlueText">
+            <td>Lớp</td>
+            <td>
+                <select>
+                    <option>-Chọn Lớp-</option>
+                </select>
+            </td>
+        </tr>
+        <tr class="darkBlueText">
+            <td>Email</td>
+            <td>
+                <input type="email" name="email" >
+            </td>
+        </tr>
+        <tr class="darkBlueText">
+            <td>Điện Thoại</td>
+            <td>
+                <input type="number" name="phoneNumber" >
+            </td>
+        </tr>
+        <tr><td></td>
+            <td>
+                <input type="submit" name="resign" value="Đăng Ký">
+                <input type="reset" name="retry" value="Nhập lại" style="margin-left: 30px">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
