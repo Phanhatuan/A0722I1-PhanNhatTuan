@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Bai 1</h1>
+    <p>Nhập điểm Lý</p>
+    <input type="number" id="Ly">
+    <p>Nhập điểm Hóa</p>
+    <input type="number" id="Hoa">
+    <p>Nhập điểm Sinh</p>
+    <input type="number" id="Sinh">
+    <br>
+    <br>
+    <button onclick="Calculate()">Calculate</button>
+
+<h1>Bai 2</h1>
+<p>Nhập độ C</p>
+<input type="number" id="doC">
+<br>
+<br>
+<button onclick="CtoF()">Calculate</button>
+
+<h1>Bai 3</h1>
+<p>Nhập chu vi: </p>
+<input type="number" id="radius">
+<br>
+<br>
+<button onclick="areaCircle()">Calculate Area</button>
+<button onclick="perimeterCircle()">Calculate perimeter</button>
+
+<script>
+    function Calculate() {
+        var inputLy = parseInt(document.getElementById("Ly").value);
+        var inputHoa = parseInt(document.getElementById("Hoa").value);
+        var inputSinh = parseInt(document.getElementById("Sinh").value);
+        var result = (inputHoa+inputLy+inputSinh)/3;
+        alert(result);
+    }
+    function CtoF() {
+        var C = parseInt(document.getElementById("doC").value);
+        var F = C*1.8 + 32;
+        alert(F);
+    }
+    function areaCircle(){
+        var radius = parseInt(document.getElementById("radius").value);
+        var area = radius*radius*3.14;
+        alert(area);
+    }
+    function perimeterCircle(){
+        var radius = parseInt(document.getElementById("radius").value);
+        var perimeter = 2*radius*3.14;
+        alert(perimeter);
+    }
+</script>
+</body>
+</html>
