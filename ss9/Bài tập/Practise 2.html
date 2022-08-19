@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Bài 1</h3>
+<span>Nhập độ C: </span>
+<input type="number" id="doC">
+<button onclick="transferToF()">Transfer To F</button>
+
+<h3>Bài 2</h3>
+<span>Nhập mét: </span>
+<input type="number" id="met">
+<button onclick="transferToFeet()">Transfer To Feet</button>
+
+<h3>Bài 3</h3>
+<span>Nhập cạnh a: </span>
+<input type="number" id="a">
+<button onclick="calculateSquareArea()">Calculate Square Area</button>
+
+<h3>Bài 4</h3>
+<span>Nhập cạnh b: </span>
+<input type="number" id="b">
+<span>Nhập cạnh c: </span>
+<input type="number" id="c">
+<button onclick="calculateRectangleArea()">Calculate Rectangle Area</button>
+
+<h3>Bài 5</h3>
+<span>Nhập cạnh d: </span>
+<input type="number" id="d">
+<span>Nhập cạnh e: </span>
+<input type="number" id="e">
+<button onclick="calculateRightTriangleArea()">Calculate Right triangle Area</button>
+
+<h3>Bài 6</h3>
+<span>Nhập số a: </span>
+<input type="number" id="f">
+<span>Nhập số b: </span>
+<input type="number" id="g">
+<button onclick="firstDegreeEquation()">Calculate First Degree Equation</button>
+
+<h3>Bài 7</h3>
+<span>Nhập số x: </span>
+<input type="number" id="x">
+<span>Nhập số y: </span>
+<input type="number" id="y">
+<span>Nhập số z: </span>
+<input type="number" id="z">
+<button onclick="secondDegreeEquation()">Calculate Second Degree Equation</button>
+
+<h3>Bài 8</h3>
+<span>Nhập số tuổi: </span>
+<input type="number" id="age">
+<button onclick="checkValidAge()">Check Valid Age</button>
+
+<h3>Bài 9</h3>
+<span>Nhập số x: </span>
+<input type="number" id="m">
+<span>Nhập số y: </span>
+<input type="number" id="n">
+<span>Nhập số z: </span>
+<input type="number" id="q">
+<button onclick="checkTriangle()">Check Triangle</button>
+
+<h3>Bài 10</h3>
+<span>Nhập số điện: </span>
+<input type="number" id="elecNumber">
+<button onclick="calculateMoney()">Calculate Money</button>
+
+<h3>Bài 11</h3>
+<span>Nhập số tiền lương: </span>
+<input type="number" id="incomeNumber">
+<button onclick="calculateTax()">Calculate Tax</button>
+
+<h3>Bài 12</h3>
+<span>Nhập số tiền muốn gửi: </span>
+<input type="number" id="sendMoney">
+<span>Nhập số tháng muốn gửi: </span>
+<input type="number" id="month">
+<button onclick="calculate()">Calculate money</button>
+<script>
+    function calculate() {
+        let a = parseFloat(document.getElementById("sendMoney").value);
+        let b = parseFloat(document.getElementById("month").value);
+        let n=0;
+        while(n < b)
+        {
+            a = a + a * 0.3 / 100;
+            n++;
+        }
+        alert("Tiền sau " + b + " tháng là: "+a);
+    }
+    function calculateTax() {
+        let incomeNumber = parseFloat(document.getElementById("incomeNumber").value);
+        let tax;
+        if(incomeNumber <= 0 ){
+            alert("Nhập không hợp lệ");
+        }
+        else if(incomeNumber <= 1000){
+            tax = incomeNumber*0.1;
+        }
+        else if(incomeNumber <= 2000){
+            tax = incomeNumber*0.2;
+        }
+        else {
+            tax=incomeNumber*0.3;
+        }
+        alert("Thuê cần trà là : "+tax);
+    }
+    function transferToF() {
+        let C = parseFloat(document.getElementById("doC").value);
+        let F = C* 9/5 +32;
+        alert("Do F là: "+F);
+    }
+    function transferToFeet() {
+        let met = parseFloat(document.getElementById("met").value);
+        let feet =met*3.2808;
+        if(met <= 0){
+            alert("Nhập số không hợp lệ!!");
+        }
+        else
+            alert("Feet là: "+feet);
+    }
+    function calculateSquareArea() {
+        let a =  parseFloat(document.getElementById("a").value);
+        let square = a * a;
+        if (a<=0){
+            alert("Nhập số không hợp lệ!!");
+        }
+        else{
+            alert("Diện tích hình vuông là là: "+square);
+        }
+    }
+    function calculateRectangleArea() {
+        let b =  parseFloat(document.getElementById("b").value);
+        let c =  parseFloat(document.getElementById("c").value);
+        let square = b * c;
+        if (b<=0 && c<=0){
+            alert("Nhập số không hợp lệ!!");
+        }
+        else {
+            alert("Diện tích hình chữ nhật là: " + square);
+        }
+    }
+    function calculateRightTriangleArea() {
+        let d =  parseFloat(document.getElementById("d").value);
+        let e =  parseFloat(document.getElementById("e").value);
+        let square = 0.5 * d * e;
+        if (d<=0 && e<=0){
+            alert("Nhập số không hợp lệ!!");
+        }
+        else {
+            alert("Diện tích hình chữ nhật là: " + square);
+        }
+    }
+    function firstDegreeEquation()
+    {
+        let a =  parseFloat(document.getElementById("f").value);
+        let b =  parseFloat(document.getElementById("g").value);
+        if (a == 0 && b == 0){
+            alert('Phương trình vô số nghiệm');
+        }
+        else if (a != 0 && b == 0){
+            alert('Phương trình có nghiệm x = 0');
+        }
+        else if (a == 0 && b != 0){
+            alert("Phương trình vô nghiệm");
+        }
+        else {
+            alert('Phương trình có nghiệm x = ' + (-b/a));
+        }
+    }
+    function secondDegreeEquation() {
+        let x1,x2;
+        let x,y,z,delta;
+        x= parseFloat(document.getElementById("x").value);
+        y= parseFloat(document.getElementById("y").value);
+        z= parseFloat(document.getElementById("z").value);
+        delta=(y*y-4*x*z);
+        if(delta ==0){
+            x1=-y/(2*x) ;
+            x2=-y/(2*x);
+            alert("phuong trinh co nghiem kep" + x1 + " " + x2);
+
+        }
+        else if(delta<0){
+            alert("phuong trinh vo nghiem");
+        }
+        else {
+            x1 = (-y - Math.sqrt(delta)) / (2 * x);
+            x2 = (-y + Math.sqrt(delta)) / (2 * x);
+            alert("phuong trinh co hai nghiem" + "x1 = " + x1 + " và x2 = " + x2);
+
+        }
+    }
+    function checkValidAge() {
+        let age = parseInt(document.getElementById("age").value);
+        if(age > 0 && age < 120){
+            alert("Tuổi hợp lệ");
+        }
+        else{
+            alert("Tuổi không hợp lệ");
+        }
+    }
+    function checkTriangle() {
+        let x= parseFloat(document.getElementById("m").value);
+        let y= parseFloat(document.getElementById("n").value);
+        let z= parseFloat(document.getElementById("q").value);
+        if(x>0 && y>0 && z >0 && (x+y)>y && (x+z)>y && (y+z)>x){
+            alert("Đây là tam giác")
+        }
+        else{
+            alert("Đây không là tam giác");
+        }
+    }
+    function calculateMoney() {
+        let elecNumber =  parseFloat(document.getElementById("elecNumber").value);
+        let pay;
+        if(elecNumber <= 0){
+            alert("Nhập số không hợp lệ!!")
+        }
+        else if(elecNumber <=100){
+            pay = elecNumber*100;
+        }
+        else if(elecNumber <=300){
+            pay=elecNumber*200;
+        }
+        else {
+            pay=elecNumber*400;
+        }
+        alert("Số tiền cần trả là : "+pay);
+    }
+</script>
+</body>
+</html>
