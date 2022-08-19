@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Bài 1</h3>
+<span>Nhập số đầu tiên: </span>
+<input type="number" id="number1">
+<br> <br>
+<span>Nhập số thứ hai: </span>
+<input type="number" id="number2">
+<br> <br>
+<button onclick="checkDivisible()">Check</button>
+
+<h3>Bài 2</h3>
+<span>Nhập tuổi: </span>
+<input type="number" id="age">
+<button onclick="checkAge()">Check age</button>
+
+<h3>Bài 3</h3>
+<span>Nhập số nguyên bất kì: </span>
+<input type="number" id="randomNumber">
+<button onclick="checkNumber()">Check</button>
+
+<h3>Bài 4</h3>
+<span>Nhập số nguyên đầu tiên: </span>
+<input type="number" id="firstNumber">
+<br> <br>
+<span>Nhập số nguyên thứ hai: </span>
+<input type="number" id="secondNumber">
+<br> <br>
+<span>Nhập số nguyên thứ ba: </span>
+<input type="number" id="thirdNumber">
+<br> <br>
+<button onclick="checkBiggestNumber()">Check</button>
+
+<h3>Bài 5</h3>
+<span>Nhập điểm bài kiểm tra: </span>
+<input type="number" id="examPoint">
+<br> <br>
+<span>Nhập điểm bài giữa kì: </span>
+<input type="number" id="midtermPoint">
+<br> <br>
+<span>Nhập số nguyên đầu tiên: </span>
+<input type="number" id="finalExamPoint">
+<br> <br>
+<button onclick="checkRank()">Check</button>
+
+<h3>Bài 6</h3>
+<span>Nhập doanh số bán hàng: </span>
+<input type="number" id="incomeMoney">
+<br> <br>
+<button onclick="checkSales()">Check sales</button>
+
+<h3>Bài 7</h3>
+<span>Nhập cước điện thoại: </span>
+<input type="number" id="phoneMoney">
+<br> <br>
+<button onclick="checkMoney()">Check money</button>
+<script>
+    function checkDivisible() {
+        let a = parseInt(document.getElementById("number1").value);
+        let b = parseInt(document.getElementById("number2").value);
+        if(a%b==0)
+            alert("Có chia hết");
+        else
+            alert("Không chia hết");
+    }
+    function checkAge() {
+        let age = parseInt(document.getElementById("age").value);
+        if(age >0 && age < 16)
+            alert("Bạn chưa đủ tuổi");
+        else if(age >= 16 && age <=30)
+            alert("Bạn đã đủ tuổi");
+        else
+            alert("Không hợp lệ");
+    }
+    function  checkNumber() {
+        let randomNumber = parseInt(document.getElementById('randomNumber').value);
+        if(randomNumber > 0 ){
+            alert("Số này lớn hơn 0");
+        }
+        else if(randomNumber<0){
+            alert("Số này bé hơn 0");
+        }
+        else {
+            alert("Số này bằng 0");
+        }
+    }
+
+    function  checkBiggestNumber() {
+        let firstNumber = parseInt(document.getElementById('firstNumber').value);
+        let secondNumber = parseInt(document.getElementById('secondNumber').value);
+        let thirdNumber = parseInt(document.getElementById('thirdNumber').value);
+        let max=firstNumber;
+        if(secondNumber > max){
+            max = secondNumber;
+        }
+
+        if(thirdNumber> max){
+            max = thirdNumber;
+        }
+        alert("Max là: "+max);
+    }
+
+    function checkRank() {
+        let examPoint = parseInt(document.getElementById('examPoint').value);
+        let midtermPoint = parseInt(document.getElementById('midtermPoint').value);
+        let finalExamPoint = parseInt(document.getElementById('finalExamPoint').value);
+
+        let point = parseFloat((examPoint+midtermPoint+finalExamPoint)/3);
+        if(point>=8){
+            alert("Bạn học sinh giỏi");
+        }
+        else if(point>=5){
+            alert("Bạn học sinh khá");
+        }
+        else{
+            alert("Bạn học sinh yếu");
+        }
+    }
+
+    function checkSales() {
+        let incomeMoney = parseInt(document.getElementById('incomeMoney').value);
+        let commission;
+        if(incomeMoney < 0){
+            alert("mời nhập lại");
+        }
+        else if(incomeMoney>=0 && incomeMoney <1000){
+            commission=incomeMoney*0.1;
+        }
+        else if(incomeMoney >= 1000 && incomeMoney <=4000){
+            commission = incomeMoney*0.2;
+        }
+        else {
+            commission=incomeMoney*0.4;
+        }
+        alert("Hoa hồng của bạn là: "+commission);
+    }
+    function  checkMoney() {
+        let phoneMoney = parseInt(document.getElementById('phoneMoney').value);
+        let pay;
+        if(phoneMoney < 0){
+            alert("Nhập sai, mời nhập lại");
+        }
+        else if(phoneMoney < 1000){
+            pay = phoneMoney*2000;
+        }
+        else if(phoneMoney < 4000){
+            pay=phoneMoney*3000;
+        }
+        else{
+            pay=phoneMoney*5000;
+        }
+        alert("Tiền phải trả là: "+ pay);
+
+    }
+</script>
+</body>
+</html>
