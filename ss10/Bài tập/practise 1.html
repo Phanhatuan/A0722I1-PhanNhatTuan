@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.</h3>
+<button onclick="count()">Click me to count</button>
+
+<h3>Bài 2: Sử dụng hàm prompt() ....</h3>
+<button onclick="request()">Click me to reqest</button>
+
+<h3>Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.</h3>
+<button onclick="displayFibonacci()">Click me to display Fibonacci</button>
+
+<h3>Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</h3>
+<button onclick="fibonacciDiv5()">Click me to find</button>
+
+<h3>Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.</h3>
+<button onclick="sum20Fibonacci()">Click me to add</button>
+
+<script>
+// Begin bai 1
+    function count(){
+        for(let i=1;i<100;i++){
+            if(i==99){
+                alert("Đã hoàn thành");
+            }
+        }
+    }
+// End bai 1
+
+// Begin bai 2
+    function request() {
+        let doC = prompt("Nhap do C");
+        if(doC<20){
+            alert("Hay tang nhiet do");
+        }
+        else if(doC > 100){
+            alert("Hay tang nhiet do");
+        }
+        else {
+            alert("Nhiet do phu hop");
+        }
+    }
+// End bai 2
+
+// Begin bai 3
+    function displayFibonacci() {
+        let num1 = 0;
+        let num2 = 1;
+        let num3;
+        let arr = "";
+        for(let i=0;i<20;i++){
+            num3 = num1+num2;
+            arr = arr + num3 + " ";
+            num1 = num2;
+            num2 = num3;
+        }
+        alert(arr);
+    }
+// End bai 3
+
+// Begin bai 4
+    function fibonacciDiv5() {
+        let num1 = 0;
+        let num2 = 1;
+        let num3;
+        for(let i=0;i<100;i++){
+            num3 = num1+num2;
+            num1 = num2;
+            num2 = num3;
+            if(num3 % 5 == 0){
+                alert(num3);
+                break;
+            }
+        }
+    }
+// End bai 4
+
+// Begin bai 5
+
+// End bai 5
+
+</script>
+</body>
+</html>
