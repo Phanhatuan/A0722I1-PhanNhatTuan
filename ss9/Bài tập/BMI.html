@@ -13,13 +13,13 @@
 <input type="number" id = "height">
 <br><br>
 
-<button onclick="BMI()">click me</button>
+<button onclick="calculateBMI()">click me</button>
 <br><br>
 
 <label>Result: </label>
 <p id="result"></p>
 <script>
-    function BMI() {
+    function calculateBMI() {
         let weight = parseFloat(document.getElementById("weight").value);
         let height = parseFloat(document.getElementById("height").value);
         let result = weight / (height * height);
