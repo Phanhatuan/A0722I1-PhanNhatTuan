@@ -20,6 +20,15 @@
 <h3>Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.</h3>
 <button onclick="sum20Fibonacci()">Click me to add</button>
 
+<h3>Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</h3>
+<button onclick="sumNumberDiv7()">Click me to add</button>
+
+<h3>Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".</h3>
+<button onclick="display1To100()">Click me to display</button>
+
+<h3>Bài 8: Game đoán số</h3>
+<button onclick="play()">Click me to play</button>
+
 <script>
 // Begin bai 1
     function count(){
@@ -94,6 +103,64 @@
         alert(sum);
     }
 // End bai 5
+
+// Begin bai 6
+    function sumNumberDiv7(){
+        let sum=0;
+        let count = 0;
+        for(let i=1;i<=30;i++){
+            sum+=i*7;
+            count++;
+        }
+        alert(sum);
+    }
+// End bai 6
+
+// Begin bai 7
+    function display1To100() {
+        let arr = "";
+        for(let i=1;i<=100;i++){
+            if(i%3 == 0 && i%5==0){
+                arr+="FizzBuzz ";
+            }
+            else if(i%3 == 0){
+                arr+= "Fizz ";
+            }
+            else if ( i%5==0){
+                arr+= "Buzz ";
+            }
+            else {
+                arr+=i+" ";
+            }
+        }
+        alert(arr);
+    }
+// End bai 7
+
+// Begin bai 8
+    function play(){
+        let min = parseInt(prompt("Hay nhập số khoảng đầu: "));
+        let max = parseInt(prompt("Hay nhập số khoảng cuối: "));
+        let answer = parseInt(prompt("Hay nhập số bạn đoán: "));
+        let randomNum = Math.floor(Math.random() * (max - min) ) + min;
+        alert(randomNum);
+        let check = false;
+        while(check == false){
+            if(answer == randomNum){
+                alert("Bạn đã đoán đúng");
+                check = true;
+            }
+            else {
+                if(answer < randomNum){
+                    answer = parseInt(prompt("Bạn cần nhập số lớn hơn: "));
+                }
+                else {
+                    answer = parseInt(prompt("Bạn cần nhập số bé hơn: "));
+                }
+            }
+        }
+    }
+// End bai 8
 
 </script>
 </body>
