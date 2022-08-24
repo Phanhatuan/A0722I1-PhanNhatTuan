@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Bài 1: In dãy Fibonaci</h3>
+<button onclick="displayFibonacci()">Click to display</button>
+
+<h3>Bài 2: Tính giai thừa của một số nguyên dương</h3>
+<button onclick="calculateFactorial()">Click to calculate</button>
+<script>
+// Begin bai 1
+    function displayFibonacci() {
+        let num1 = 0;
+        let num2 = 1;
+        let num3;
+        let index = parseInt(prompt("Hãy nhập số lượng bạn muốn in!!"));
+        index -= 2;
+        let arr = String(num1) + " " + String(num2) + " " ;
+        for(let i=0;i<index;i++){
+            num3 = num1+num2;
+            arr = arr + num3 + " ";
+            num1 = num2;
+            num2 = num3;
+        }
+        alert(arr);
+    }
+// End bai 1
+// Begin bai 2
+    function calculateFactorial() {
+        let factorialNumber = 1;
+        let inputNumber = parseInt(prompt("Hãy nhập một số dương!!!"));
+        if(inputNumber < 0){
+            inputNumber = parseInt(prompt("Nhập sai. Hãy nhập một số dương!!!"));
+        }
+        else {
+            if(inputNumber == 0 && inputNumber == 1){
+                alert("Giai thừa bằng 1");
+            }
+            else{
+                while(inputNumber > 1){
+                    factorialNumber *= inputNumber;
+                    inputNumber--;
+                }
+            }
+        }
+        alert(factorialNumber);
+    }
+// End bai 2
+
+</script>
+</body>
+</html>
