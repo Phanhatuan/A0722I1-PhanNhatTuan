@@ -10,6 +10,17 @@
 
 <h3>Bài 2: Tính giai thừa của một số nguyên dương</h3>
 <button onclick="calculateFactorial()">Click to calculate</button>
+
+<h3>Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau</h3>
+<button onclick="displayRightTriangle()">Click to display 1 2</button>
+<button onclick="displayRightTriangle2()">Click to display 3 4</button>
+<p id="shape"></p>
+
+<h3>Bài 4: In hình chữ nhật</h3>
+<button onclick="displayRectangle()">Click to display Rectangle</button>
+
+<h3>Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</h3>
+<button onclick="calculate()">Calculate</button>
 <script>
 // Begin bai 1
     function displayFibonacci() {
@@ -49,6 +60,83 @@
         alert(factorialNumber);
     }
 // End bai 2
+// Begin bai 3
+    function displayRightTriangle() {
+        let arr = "";
+        let height = parseInt(prompt("Nhập chiều dài của tam giác"));
+        for (let i = 0; i < height; i++) {
+            for (let j = 0; j <= i; j++) {
+                arr += "* ";
+            }
+            arr+= "\n";
+        }
+        arr+="\n";
+        for (let i = 0; i < height; i++) {
+            for (let j = height ; j > i; j--) {
+                arr += "* ";
+            }
+            arr+= "\n";
+        }
+        arr+="\n";
+        document.getElementById("shape").innerText = arr;
+    }
+    function displayRightTriangle2() {
+        let height = parseInt(prompt("Nhập chiều dài của tam giác"));
+        for (let i = 0; i < height; i++) {
+            for (let j = 0; j <= height; j++) {
+                if (j < (height - i)) {
+                    document.writeln("&nbsp;&nbsp;");
+                } else {
+                    document.writeln("*");
+                }
+            }
+            document.write("<br>")
+        }
+        document.write("<br>");
+
+        for (let i = 0; i < height; i++) {
+            for (let j = 0; j < height; j++) {
+                if (j <= (i - 1)) {
+                    document.write("&nbsp; &nbsp;");
+                } else {
+                    document.writeln("*");
+                }
+            }
+            document.write("<br>");
+        }
+    }
+// End bai 3
+// Begin bai 4
+    function displayRectangle() {
+        let cd = parseInt(prompt("Hãy nhập chiều dài: "));
+        let cr = parseInt(prompt("Hãy nhập chiều rộng: "));
+        let cd1 = cd-1;
+        let cr1 = cr-1;
+        for(let i = 0; i < cr; i++){
+            for(let j = 0; j < cd; j++){
+                if (i == 0 || i == cr1 || j == 0 || j == cd1) {
+                    document.writeln("*");
+                } else {
+                    document.writeln("&nbsp;&nbsp;");
+                }
+            }
+            document.write("<br>");
+
+        }
+}
+// End bai 4
+// Begin bai 5
+function calculate() {
+    let income = parseInt(prompt("Nhập số tiền ban đầu: "));
+    let month = parseInt(prompt("Nhập số tháng cần gửi: "));
+    let tax = parseInt(prompt("Nhập số lãi: "));
+
+    for(let i=0;i<month;i++){
+        income+=income*tax;
+    }
+    alert(income);
+}
+// End bai 5
 
 </script>
 </body>
