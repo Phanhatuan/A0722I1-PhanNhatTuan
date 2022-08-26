@@ -6,13 +6,60 @@
 </head>
 <body>
 <h3>Bài 1: Viết một chương trình Javascript để nối tất cả các phần tử trong một mảng chuỗi lại với nhau.</h3>
-<button onclick="useConcat()">click me</button>
+<button onclick="useJoin()">click me</button>
+
+<h3>Bài 2: Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn</h3>
+<button onclick="insertMinus()">click me</button>
+
+<h3>Bài 3: Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa</h3>
+<button onclick="trans()">click me</button>
 
 <script>
-    let myColor = ["Red", "Green", "White", "Black"];
-    for(let i=0;i<myColor.length;i++){
-
+// Begin bài 1
+    function useJoin(){
+        let myColor = ["Red", "Green", "White", "Black"];
+        alert(myColor.join(", ")) ;
     }
+// End bài 1
+// Begin bài 2
+    function insertMinus(){
+        let number = prompt("Hãy nhập chuổi số: ");
+        let str = number.toString();
+        let arr = [str[0]] ;
+        for(let i=1;i<str.length;i++){
+            if(str[i-1] %2 ===0 && str[i] % 2 === 0){
+                arr.push('-',str[i]);
+            }
+            else {
+                arr.push(str[i]);
+            }
+        }
+        alert(arr.join(''));
+    }
+// End bài 2
+// Begin bài 3
+    function trans(){
+            let str = prompt("Nhập vào chuỗi muốn chuyển");
+            let str1 = str.toString();
+            let arr = [];
+            for(let i=0;i<str1.length;i++){
+                let a = str1[i];
+                let b = a.charCodeAt(a);
+                if(b>=97 && b <= 122){
+                    a=a.toUpperCase();
+                    arr.push(a);
+                }else if (b>=65 && b<=90){
+                    a=a.toLowerCase();
+                    arr.push(a);
+                }
+                else{
+                    arr.push(a);
+                }
+            }
+        alert(arr.join(''));
+    }
+// End bài 3
+
 </script>
 </body>
 </html>
