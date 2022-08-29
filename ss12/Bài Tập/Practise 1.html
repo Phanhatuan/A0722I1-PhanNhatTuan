@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.</h3>
+<button onclick="displayGreaterTen()">Click me</button>
+
+<h3>Bài 2- Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.</h3>
+<button onclick="displayBiggest()">Click me</button>
+
+<h3>Bài 3- Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.</h3>
+<button onclick="displayAverage()">Click me</button>
+
+<h3>Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.</h3>
+<button onclick="reverseArr()">Click me</button>
+
+<h3>Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi</h3>
+<label>Nhập một từ bất kì: </label>
+<input type="text" id="textInput">
+<button onclick="countVowel()">Click me</button>
+
+<h3>Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".</h3>
+<button onclick="check()">Click me</button>
+
+<h3>Bài 7- Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng</h3>
+<button onclick="deleteNumber()">Click me</button>
+
+<h3>Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.</h3>
+<button onclick="sortArr()">Click me</button>
+
+<h3>Bài 9- Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b. Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên. Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.</h3>
+<button onclick="stringConcatenation()">Click me</button>
+
+<script>
+// begin Bài 1
+    function displayGreaterTen(){
+        let n = parseInt(prompt("Nhập số phần tử", ''));
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Phan tu thu " + i));
+        }
+        let count = 0;
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]>=10){
+                    count++;
+                }
+            }
+        alert("Số nguyên lớn hơn hoặc bằng 10 là "+count);
+    }
+// end Bài 1
+
+// begin Bài 2
+    function displayBiggest() {
+        let n = parseInt(prompt("Nhập số phần tử", ''));
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Phan tu thu " + i));
+        }
+        let max = arr[0];
+        let index = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i]>max){
+                max = arr[i];
+                index = i;
+            }
+        }
+        alert("Max là " + max + "\n" + "index là " + index);
+
+    }
+// end Bài 2
+
+// begin Bài 3
+function displayAverage() {
+    let n = parseInt(prompt("Nhập số phần tử", ''));
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt("Phan tu thu " + i));
+    }
+    let max = arr[0];
+    let average = 0;
+    for (let i = 0; i < arr.length; i++) {
+        average+=arr[i];
+        if(arr[i]>max){
+            max = arr[i];
+        }
+    }
+    alert("Max là " + max + "\n" + "trung bình là " + average/10);
+}
+// end Bài 3
+
+// begin Bài 4
+    function reverseArr() {
+        let n = parseInt(prompt("Nhập số phần tử", ''));
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Phan tu thu " + i));
+        }
+        alert("Mảng bình thường "+arr);
+        let revArr = arr.reverse();
+        alert("Mảng sau khi đảo ngược " + revArr);
+    }
+// end Bài 4
+// begin Bài 5
+    function countVowel() {
+        let string = document.getElementById('textInput').value;
+        let count = 0;
+        for (let i = 0; i < string.length; i++) {
+            if (string[i] === 'u' || string[i] === 'e' || string[i] === 'o' || string[i] === 'a' || string[i] === 'i'){
+                count++;
+            }
+        }
+        alert("Số nguyên âm là " + count);
+}
+// end Bài 5
+
+// begin Bài 6
+    function check() {
+        let n = parseInt(prompt("Nhập số phần tử", ''));
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Phan tu thu " + i));
+        }
+        let flag = false;
+        let inputNumber = parseInt( prompt("Nhập số cần kiểm tra :") );
+        for (let i = 0; i < arr.length; i++) {
+            if (inputNumber === arr[i]) {
+                flag = true;
+                break;
+            }
+        }
+        if(flag == true){
+            alert(inputNumber +" is in the array");
+        }
+        else{
+            alert(inputNumber +" is not in the array");
+
+        }
+    }
+// end Bài 6
+
+// begin Bài 7
+    function deleteNumber() {
+        let n = parseInt(prompt("Nhập số phần tử", ''));
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Phan tu thu " + i));
+        }
+        let number = parseInt(prompt("nhập số nguyên bất kì cần xóa: ")) ;
+        let index = 0;
+        let flag = true;
+        for (let i = 0; i < arr.length; i++) {
+            if(number === arr[i]){
+                for(let j = index; j < arr.length ; j++){
+                    arr[j] = arr[j+1];
+                    i--;
+                }
+                flag = false;
+                }
+            }
+        if (flag == false){
+            arr[arr.length]=0;
+        }
+        alert(arr);
+    }
+//end Bài 7
+
+// begin Bài 8
+    function sortArr() {
+        let n = parseInt(prompt("Nhập số phần tử", ''));
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Phan tu thu " + i));
+        }
+        let temp;
+        for (let k = 0; k < n - 1; k++) {
+            for (let j = k + 1; j < n; j++) {
+                if (arr[k] < arr[j]) {
+                    temp = arr[k];
+                    arr[k] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        alert("Hiển thị mảng đã được sắp xếp: " +arr);
+
+    }
+// end Bài 8
+
+// begin Bài 9
+    function stringConcatenation() {
+        let arr = Array(10);
+        let arr1 = Array(10);
+        let arr2 = Array(20);
+        for (let i=0; i<10;i++){
+            arr[i]= parseInt(prompt("Nhập mảng thứ nhất, phần tử thứ "+(i+1)));
+        }
+        for (let i=0; i<10;i++){
+            arr1[i]= parseInt(prompt("Nhập mảng thứ hai, phần tử thứ 2"+(i+1)));
+        }
+        arr2 = arr.concat(arr1);
+        alert("Mảng sau khi nối là "+arr2);
+    }
+// end Bài 9
+
+</script>
+</body>
+</html>
