@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</h3>
+<button onclick="numberSquare(parseInt(prompt('Nhập một số: ')))">Click me</button>
+
+<h3>Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được</h3>
+<button onclick="calculateCircle(parseInt(prompt('Nhập chu vi: ')))">Click me</button>
+
+<h3>Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</h3>
+<button onclick="calculateFactorial(parseInt(prompt('Nhập một số: ')))">Click me</button>
+
+<h3>Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.</h3>
+<button onclick="checkNumber(parseInt(prompt('Nhập một số: ')))">Click me</button>
+
+<h3>Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</h3>
+<button onclick="minimumNumber(parseInt(prompt('Nhập số nguyên đầu tiên: ')),parseInt(prompt('Nhập số nguyên thứ hai: ')),parseInt(prompt('Nhập số nguyên thứ ba: ')))">Click me</button>
+
+<h3>Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.</h3>
+<button onclick="checkPositive(parseInt(prompt('Nhập một số: ')))">Click me</button>
+
+<h3>Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</h3>
+<button onclick="switchNumber(parseInt(prompt('Nhập số nguyên đầu tiên:')),parseInt(prompt('Nhập số nguyên thứ hai: ')))">Click me</button>
+
+<h3>Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</h3>
+<button ></button>
+<script>
+    // begin bài 1
+    function numberSquare(number) {
+        alert(number*number);
+    }
+    // end bài 1
+
+    // begin bài 2
+    function calculateCircle(radius) {
+        alert("Diện tích hình tròn: "+3.14*radius*radius+"\nChu vi hình tròn: "+3.14*2*radius);
+    }
+    // end bài 2
+
+    // begin bài 3
+    function calculateFactorial(number) {
+        let sum=1;
+        for (let i = 1; i <= number; i++) {
+            sum*=i;
+        }
+        alert("Giai thừa là: "+sum);
+    }
+    // end bài 3
+
+    // begin bài 4
+    function checkNumber(number) {
+        let flag=true;
+        if(isNaN(number)){
+            flag = false;
+        }
+        if(flag){
+            alert("Đây là number");
+        } else {
+            alert("Đây không phải là number");
+        }
+        return flag;
+    }
+    // end bài 4
+    
+    // begin bài 5
+    function minimumNumber(number1,number2,number3) {
+        let min = number1;
+        if(number2<min){
+            min=number2;
+        }
+        if(number3<min){
+            min=number3;
+        }
+        alert(min);
+        return min;
+    }
+    // end bài 5
+    
+    // begin bài 6
+    function checkPositive(number) {
+        let flag=true;
+        if(number < 0){
+            flag = false;
+            alert("Đây là số âm");
+        }
+        else {
+            alert("Đây là số dương");
+        }
+        return flag;
+    }
+    // end bài 6
+
+    // begin bài 7
+    function switchNumber(number1, number2) {
+        let temp;
+        temp = number1;
+        number1=number2;
+        number2=temp;
+        alert("Sau khi chuyển là:\n"+"Số đầu tiên: "+number1+"\n"+"Số thứ hai: "+number2);
+    }
+    // end bài 7
+
+</script>
+</body>
+</html>
