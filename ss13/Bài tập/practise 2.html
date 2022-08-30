@@ -26,8 +26,9 @@
 <h3>Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</h3>
 <button onclick="switchNumber(parseInt(prompt('Nhập số nguyên đầu tiên:')),parseInt(prompt('Nhập số nguyên thứ hai: ')))">Click me</button>
 
-<h3>Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</h3>
-<button ></button>
+<h3>Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</h3>
+
+<h3>Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1</h3>
 <script>
     // begin bài 1
     function numberSquare(number) {
@@ -103,6 +104,45 @@
         alert("Sau khi chuyển là:\n"+"Số đầu tiên: "+number1+"\n"+"Số thứ hai: "+number2);
     }
     // end bài 7
+
+    // begin bài 8
+    function reverseArr(arr) {
+        arr.reverse();
+        return arr;
+    }
+    // Mở comment để test code
+    /*let arr = [2,3,4,5,6];
+    let result = reverseArr(arr);
+    document.write(result);*/
+    // end bài 8
+
+    // begin bài 9
+    function checkForExistence(arr ,x) {
+        let count = 0;
+        let flag = false;
+        for (let i=0; i<arr.length; i++){
+            if( x === arr[i]){
+                flag = true;
+                count++;
+            }
+        }
+        if(flag == true){
+            return count;
+        }
+        else {
+            return -1;
+        }
+    }
+    // Mở comment để test code
+    /*let n = parseInt(prompt("Nhập số phần tử", ''));
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = prompt("Phan tu thu " + i);
+    }
+    let x = prompt("Nhập phần tử muốn đếm số lượng: ");
+    let result = checkForExistence(arr, x);
+    document.write(result);*/
+    // end bài 9
 
 </script>
 </body>
