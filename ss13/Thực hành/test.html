@@ -2,20 +2,16 @@
 <html>
 <head>
     <title>Scoping Example</title>
-    <script type="text/javascript">
-        let aNewVariable = "is global.";
-        function doSomething(incomingBits) {
-            alert("Global variable within the function: " + aNewVariable);
-            alert("Local variable within the function: " + incomingBits);
-        }
-        doSomething("is a local variable");
-        alert("Global var outside the function: " + aNewVariable);
-        alert("Local var outside the function: " + incomingBits)    ;
-    </script>
+
 </head>
 <body>
 <script type="text/javascript">
-
+    function func1(a){
+        if(a == 2)
+            return 2;
+        return a * func1(a - 1);
+    }
+    alert(func1(5));
 </script>
 </body>
 </html>

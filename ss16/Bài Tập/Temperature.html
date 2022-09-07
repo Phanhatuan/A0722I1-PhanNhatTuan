@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Temperature = function(tempC){
+        this.tempC = tempC;
+        if(this.tempC <-273){
+            alert("Vượt quá độ không tuyệt đối");
+        }
+        this.getTempC = function() {
+            return this.tempC;
+        }
+        this.setTempC = function(tempC) {
+            this.tempC  = tempC;
+        }
+
+        this.transToF = function() {
+            return this.tempC*1.8 + 32;
+        }
+        this.transToK = function() {
+            return this.tempC + 273.15;
+        }
+    }
+    let temperature = new Temperature(25);
+    let F = temperature.transToF();
+    let K = temperature.transToK();
+
+    alert("F = "+F+" K = "+K);
+</script>
+</body>
+</html>

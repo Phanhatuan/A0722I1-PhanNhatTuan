@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="DemoCanvas" width="500" height="600"></canvas>
+</canvas>
+<script>
+    let Rectangle  = function(width,length) {
+
+        this.length = length;
+        this.width = width;
+
+        this.getLength = function() {
+            return this.length;
+        }
+        this.getWidth = function() {
+            return this.width;
+        }
+        this.setLength = function(length) {
+            this.length  = length;
+        }
+        this.setWidth = function(width) {
+            this.width  = width;
+        }
+        this.getArea = function() {
+            return length * width ;
+        }
+        this.getPerimeter = function() {
+            return (length + width)*2 ;
+        }
+    };
+    let rec = new Rectangle(200,400);
+    let length = rec.getLength();
+    let width = rec.getWidth();
+    let length1 = prompt("Hãy nhập chiều dài: ");
+    rec.setLength(length1);
+    let width1 = prompt("Hãy nhập chiều rộng: ");
+    rec.setLength(width1);
+
+    length = rec.getLength();
+    width = rec.getWidth();
+    alert("Width: "+width + " " + "Length: "+length );
+    let canvas = document.getElementById("DemoCanvas");
+    if (canvas.getContext)
+    {
+        let ctx = canvas.getContext('2d');
+        ctx.fillStyle='#000';    // color of fill
+        ctx.fillRect(0, 0, width, length); // create rectangle
+    }
+</script>
+</body>
+</html>

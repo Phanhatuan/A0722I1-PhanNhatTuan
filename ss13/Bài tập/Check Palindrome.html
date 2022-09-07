@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Check palindrome</h3>
+<button onclick="checkPalindrome()">click me</button>
+<script>
+    function checkPalindrome() {
+        let str = prompt("Hãy nhập một chuỗi cần kiếm tra: ");
+        let str1 = str.split("");
+        let palindromeStr = str1.reverse();
+        let newStr = palindromeStr.join("");
+        if(str == newStr){
+            alert("Đây là chuỗi đối xứng");
+        }
+        else {
+            alert("Đây ko là chuỗi đối xứng");
+        }
+    }
+</script>
+</body>
+</html>
