@@ -6,25 +6,76 @@
 </head>
 <body>
 <script>
-    function Mobile(id, name){
-        this.id = id;
-        this.name = name;
-        this.message = "";
-        this.setMessage=function(message) {
-            this.message=message;
+    class Apple {
+        constructor() {
+            this.weight = 10;
         }
-        this.getMessage=function () {
-            return this.message;
+        decrease (){
+            this.weight--;
         }
-        this.sendMessage=function (message, mobile1) {
-            mobile1.setMessage(message);
+        isEmpty (){
+            if (this.weight >= 0){
+                return true;
+            }
+            return false;
+        }
+        getWeight(){
+            return this.weight;
         }
     }
-    let ip = new Mobile(1,"iphone");
-    let an = new Mobile(2,"android");
-    ip.sendMessage("Hello",an);
-    let a = an.getMessage();
-    console.log(a);
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+        isMale(){
+            if (this.gender == 1) {
+                return true;
+            }
+            return false;
+        }
+        setGender(gender){
+            this.gender = gender;
+        }
+
+        checkApple(apple) {
+            if(apple.isEmpty()){
+                return false;
+            }
+            return true;
+        }
+        eat(apple){
+            if(apple.isEmpty()){
+                apple.decrease();
+                this.weight++;
+            }
+            else{
+                console.log("Đã ăn hết táo!!!");
+            }
+        }
+        getName(){
+            return this.name;
+        }
+        setName(name){
+            this.name = name;
+        }
+
+        getWeight(){
+            return this.weight;
+        }
+        setWeight(weight){
+            this.weight = weight;
+        }
+
+        say(string){
+            console.log("Tôi nói là: "+string);
+        }
+    }
+    let apple1 = new Apple();
+    let human1 = new Human("Tuan",1,80);
+    human1.eat(apple1);
 </script>
 </body>
 </html>
