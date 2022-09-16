@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập tiền lương: </label>
+<input type="number" id="salary">
+<button onclick="calculateTax()">click me</button>
+<script>
+    function calculateTax(){
+        let salary = parseInt(document.getElementById("salary").value);
+        let realSalary =0;
+        if(salary > 15){
+            realSalary = salary*0.8;
+        } else if (salary > 7) {
+            realSalary = salary*0.9;
+        } else {
+            realSalary = salary*0.95;
+        }
+        alert("Tiền lương thật sự là: "+realSalary);
+    }
+
+</script>
+</body>
+</html>

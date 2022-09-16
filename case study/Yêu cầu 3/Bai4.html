@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhập 1 số bất kì: ");
+    let str = "";
+    for (let i = 0; i < a.length; i++) {
+        if(a[i]==0)
+            str += "Khong ";
+        else if(a[i]==1){
+            str +="Mot ";
+        }
+        else if(a[i]==2){
+            str +="hai ";
+        }
+        else if(a[i]==3){
+            str +="ba ";
+        }
+        else if(a[i]==4){
+            str +="Bon ";
+        }
+        else if(a[i]==5){
+            str +="Nam ";
+        }
+        else if(a[i]==6){
+            str +="Sau ";
+        }
+        else if(a[i]==7){
+            str +="Bay ";
+        }
+        else if(a[i]==8){
+            str +="Tam ";
+        }
+        else if(a[i]==9){
+            str +="Chin ";
+        }
+    }
+    alert(str);
+</script>
+</body>
+</html>

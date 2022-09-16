@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Bài 1: Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m theo hình dưới đây</h3>
+<button onclick="displayRectangle()">Click to display Rectangle</button>
+<script>
+    // Begin bai 1
+    function displayRectangle() {
+        let cd = parseInt(prompt("Hãy nhập chiều dài: "));
+        let cr = parseInt(prompt("Hãy nhập chiều rộng: "));
+        let cd1 = cd-1;
+        let cr1 = cr-1;
+        for(let i = 0; i < cr; i++){
+            for(let j = 0; j < cd; j++){
+                if (i == 0 || i == cr1 || j == 0 || j == cd1) {
+                    document.writeln("*");
+                } else {
+                    document.writeln("&nbsp;&nbsp;");
+                }
+            }
+            document.write("<br>");
+            document.write("<br>");
+
+        }
+    }
+    // End bai 1
+</script>
+</body>
+</html>

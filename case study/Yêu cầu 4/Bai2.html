@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputStr = prompt("Nhập chuỗi: ");
+    let str = inputStr.split(""); // tách chuỗi thành mảng
+    let arr = [str[0]];
+    for (let i = 1; i < str.length; i++) {
+        if (arr.indexOf(str[i])==-1) {
+            arr.push(str[i]);
+        }
+    }
+    alert(arr.length+" "+arr);
+</script>
+</body>
+</html>

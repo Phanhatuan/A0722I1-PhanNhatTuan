@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Bài 3: Vẽ tam giác cân đặc có chiều cao h </h3>
+<button onclick="displayIsoscelesTriangle()">Click to display</button>
+<script>
+    // Begin bai 3
+    function displayIsoscelesTriangle() {
+        let height = parseInt(prompt("Nhập chiều dài của tam giác"));
+        let m = height, n = height;
+        for (let i = 1; i <= height; i++)
+        {
+            for (let j = 1; j <= 2 * height - 1; j++)
+            {
+                if (j >= m && j <= n)
+                    document.writeln("*");
+
+                else
+                    document.writeln("&nbsp;&nbsp;");
+
+            }
+            m--;
+            n++;
+            document.write("<br>");
+            document.write("<br>");
+
+        }
+    }
+    // End bai 3
+</script>
+</body>
+</html>

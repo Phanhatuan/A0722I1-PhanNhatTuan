@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Bài 2: Vẽ tam giác vuông cân rỗng có chiều cao h </h3>
+<button onclick="displayRightTriangle()">Click to display</button>
+<script>
+    // Begin bai 2
+    function displayRightTriangle() {
+        let height = parseInt(prompt("Nhập chiều dài của tam giác"));
+        for (let i = 1; i <= height; i++) {
+            for (let j = 1; j <= i; j++) {
+                if(j==i || j == 1  || i == height){
+                    document.writeln("*");
+                }
+                else
+                    document.writeln("&nbsp;&nbsp;");
+            }
+            document.write("<br>");
+            document.write("<br>");
+        }
+    }
+    // End bai 2
+
+</script>
+</body>
+</html>

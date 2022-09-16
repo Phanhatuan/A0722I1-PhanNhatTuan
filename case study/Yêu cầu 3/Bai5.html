@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let sum = 0;
+    let a;
+    let arr = ["cafe" ,"cam vắt","nước ép cà rốt","nước ép cà chua", "nước lọc", "nước dừa"];
+    let cost = [1,2,3,4,5,6];
+    do {
+        alert(
+            "    1) cafe ($1)\n" +
+            "    2) cam vắt ($2)\n" +
+            "    3) Nước ép cà rốt ($3)\n" +
+            "    4) Nước ép cà chua ($4)\n" +
+            "    5) nước lọc ($5)\n" +
+            "    6) Nước dừa ($6)");
+        a = parseInt(prompt("Nhập nước bạn muốn mua: "));
+        for (let i = 0; i < arr.length; i++) {
+            if (i == a-1){
+                alert("Bạn đã chọn: "+arr[i]);
+                sum +=cost[i];
+            }
+        }
+        alert("Nhấn 7 để thoát chương trình!! ");
+    } while(a>=1 && a<=6);
+    alert("tong tien la "+ sum);
+</script>
+
+</ol>
+</body>
+</html>
