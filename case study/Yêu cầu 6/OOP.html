@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+
+    .numberBox{
+        width: 40px;
+        height: 20px;
+    }
+</style>
+<h3>Xổ số Codegym</h3>
+<input class="numberBox" type="text" id="number1" autocomplete="off">
+<input class="numberBox" type="text" id="number2" autocomplete="off">
+<input class="numberBox" type="text" id="number3" autocomplete="off">
+<input class="numberBox" type="text" id="number4" autocomplete="off">
+<input class="numberBox" type="text" id="number5" autocomplete="off">
+<input class="numberBox" type="text" id="number6" autocomplete="off">
+<br><br>
+
+<input type="submit" onclick="buySystem()" value="Mua vé số hệ thống chọn">
+<input type="submit" onclick="buySelf()" value="Mua vé số tự chọn">
+<input type="submit" onclick="checkPrize()" value="Xem kết quả">
+<p id="a"></p>
+<script>
+    let winArr = [];
+    function randomNumber() {
+        //let number1 =  Math.floor(Math.random() * 100);
+        let number1 = 1;
+        winArr.push(number1);
+        //let number2 =  Math.floor(Math.random() * 100);
+        let number2 = 2;
+        winArr.push(number2);
+        //let number3 =  Math.floor(Math.random() * 100);
+        let number3 = 3;
+        winArr.push(number3);
+        //let number4 =  Math.floor(Math.random() * 100);
+        let number4 = 4;
+        winArr.push(number4);
+        //let number5 =  Math.floor(Math.random() * 100);
+        let number5 = 5;
+        winArr.push(number5);
+        //let number6 =  Math.floor(Math.random() * 100);
+        let number6 = 6;
+        winArr.push(number6);
+    }
+    class Ticket{
+        constructor() {
+            if(answer==1){
+                this.number1 = document.getElementById("number1").value;
+                this.number2 = document.getElementById("number2").value;
+                this.number3 = document.getElementById("number3").value;
+                this.number4 = document.getElementById("number4").value;
+                this.number5 = document.getElementById("number5").value;
+                this.number6 = document.getElementById("number6").value;
+                this.arr = [this.number1, this.number2, this.number3, this.number4, this.number5, this.number6];
+            }
+           else if (answer==2){
+                this.number1 = Math.floor(Math.random() * 100);
+                this.number2 = Math.floor(Math.random() * 100);
+                this.number3 = Math.floor(Math.random() * 100);
+                this.number4 = Math.floor(Math.random() * 100);
+                this.number5 = Math.floor(Math.random() * 100);
+                this.number6 = Math.floor(Math.random() * 100);
+                this.arr = [this.number1, this.number2, this.number3, this.number4, this.number5, this.number6];
+                alert("Vé số được chọn là: "+this.arr);
+            }
+        }
+    }
+
+    class Customer{
+        constructor() {
+            this.count = 0;
+            this.cusTicket =[];
+        }
+        checkValid(){
+            let flag = true;
+            if(this.count == 4){
+                flag = false;
+            }
+            return flag;
+        }
+        addToCus(ticket){
+            if(this.checkValid()==true){
+                this.cusTicket[this.count]=ticket.arr;
+                this.count++;
+            } else {
+                alert("Đã hết 4 lượt!");
+            }
+        }
+
+        checkPrize() {
+            for (let i = 0; i < this.cusTicket.length; i++) {
+                let count = 0;
+                for (let j = 0; j < winArr.length; j++) {
+                    if (this.cusTicket[i][j] == winArr[j] && this.cusTicket[i][j+1] == winArr[j+1] && this.cusTicket[i][j+2] == winArr[j+2] && this.cusTicket[i][j+3] == winArr[j+3]) {
+                        count++;
+                    }
+                }
+                if (count == 6) {
+                    alert("Bạn đã trúng giải nhất");
+                } else if(count == 5){
+                    alert("Bạn đã trúng giải hai");
+                } else if (count == 4){
+                    alert("Bạn đã trúng giải ba");
+                } else {
+                    alert("Bạn đã không trúng");
+                }
+            }
+        }
+    }
+    randomNumber();
+    function clear(){
+        document.getElementById("number1").value='';
+        document.getElementById("number2").value='';
+        document.getElementById("number3").value='';
+        document.getElementById("number4").value='';
+        document.getElementById("number5").value='';
+        document.getElementById("number6").value='';
+    }
+    let answer;
+    let customer = new Customer();
+    function buySelf() {
+        answer = 1;
+        let ticket = new Ticket();
+        customer.addToCus(ticket);
+        clear();
+    }
+    function buySystem() {
+        answer = 2;
+        if(customer.checkValid()==false){
+            alert("Đã hết 4 lượt!");
+        } else{
+            let ticket = new Ticket();
+            customer.addToCus(ticket);
+        }
+    }
+    function checkPrize(){
+        customer.checkPrize();
+    }
+</script>
+</body>
+</html>

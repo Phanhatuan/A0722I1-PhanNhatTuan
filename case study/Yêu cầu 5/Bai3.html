@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhập n dòng trong mảng 2 chiều: "));
+    let m = parseInt(prompt("Nhập m cột trong mảng 2 chiều: "));
+    let arr =[];
+    for (let i = 0; i < n; i++) {
+        arr[i] = [];
+        for (let j = 0; j < m; j++) {
+            arr[i][j] = parseInt(prompt("Nhập phần tử dòng "+i+" cột "+ j));
+        }
+    }
+
+    function minMax() {
+        let min = arr[0][0];
+        let max = arr[0][0];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if(arr[i][j]>max){
+                    max = arr[i][j];
+                }
+                if(arr[i][j]<min){
+                    min = arr[i][j];
+                }
+            }
+        }
+       alert("Gia tri lon nhat la: "+max +"Gia tri nho nhat la: "+ min) ;
+    }
+    minMax();
+
+</script>
+</body>
+</html>

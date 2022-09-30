@@ -5,6 +5,35 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    function isPrime(number){
+        let flag = true;
+        if(number < 2){
+            flag = false;
+        }
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (flag) {
+                if(number% i === 0) {
+                    flag = false;
+                }
+            }
+        }
+        return flag;
+    }
+    let n = parseInt(prompt("Nhập n dòng trong mảng 2 chiều: "));
+    let m = parseInt(prompt("Nhập m cột trong mảng 2 chiều: "));
+    let a =[];
+    let count = 0;
+    for (let i = 0; i < n; i++) {
+        a[i] = [];
+        for (let j = 0; j < m; j++) {
+            a[i][j] = parseInt(prompt("Nhập phần tử dòng "+i+" cột "+ j));;
+            if (isPrime(a[i][j])==true) {
+                count++;
+            }
+        }
+    }
+    alert(count);
+</script>
 </body>
 </html>
